@@ -47,6 +47,6 @@ Unless you know what you are changing, start with the config as provided.
 
 ## Requirements
 
-These configurations are intended for the **OKO OS model runner** and `llama-server`.
+These configurations are intended for the **OKO OS** https://oko.satisfanly.com.
 
-Model weights are not included in this repository.
+Model weights are not included in this repository and can be downloaded using *oko-dl* utility.
