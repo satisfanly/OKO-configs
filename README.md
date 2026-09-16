@@ -2,7 +2,13 @@
 
 Tested, ready-to-use model configurations for the **OKO OS model runner**.
 
-These configs are provided as working presets for different models. They include the recommended `llama-server` launch parameters and OKO runner settings for each model.
+These configs are provided as working presets for different models. They include the recommended `llama-server` parameters and OKO runner settings for each model.
+
+## Requirements
+
+These configurations are intended for the **OKO OS** https://oko.satisfanly.com.
+
+Model weights are not included in this repository and can be downloaded using *oko-dl* utility.
 
 ## Usage
 
@@ -45,8 +51,3 @@ Where a model requires special settings such as MTP/speculative decoding, multim
 
 Unless you know what you are changing, start with the config as provided.
 
-## Requirements
-
-These configurations are intended for the **OKO OS** https://oko.satisfanly.com.
-
-Model weights are not included in this repository and can be downloaded using *oko-dl* utility.
