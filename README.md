@@ -17,7 +17,7 @@ That's it.
 Example:
 
 ```yaml
-drts:
+some-model-name:
   prio: 50
   alias:
     - sf_organic
