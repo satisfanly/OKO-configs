@@ -1,0 +1,26 @@
+qwen38-DavidAU:
+  prio: 50
+  cmd: >-
+    llama-server
+    -m models/DavidAU___Qwen3.8-27B-TWIN-TURBO-Fable-Cold-Fusion-709-L-Uncensored-NM-DAU-NEO-MTP-GGUF/Qwen3.8-27B-TTURBO-Fable-C-Fusion-709-L-Uncen-TOOLS-NM-DAU-NEO-MAX-MTP-Q8_0.gguf
+    -mm models/DavidAU___Qwen3.8-27B-TWIN-TURBO-Fable-Cold-Fusion-709-L-Uncensored-NM-DAU-NEO-MTP-GGUF/mmproj-F32.gguf
+    --spec-type draft-mtp --spec-draft-n-max 4
+    -fit off -fa on -np 1 -b 256 -ub 256
+    --no-context-shift --no-prefill-assistant
+    -c 262144 -ngl 999
+    --thinking-eos-modifier 1e6
+    --reasoning-budget-message "The reasoning is taking too long. I'll now either provide an intermediate summary before continuing the reasoning, or choose a new direction."
+  presence-penalty (ro): 0.0
+  repeat-penalty (ro): 1.0
+  min-p (ro): 0.0
+  top-k (ro): 20
+  top-p (ro): 0.8
+  temperature (ro): 0.2
+  dry-multiplier (ro): 0.0
+  reasoning-effort (force): medium
+  reasoning-preserve (force): on
+  reasoning-budget (ro): 24000
+  sysf: null
+  think: on
+  external-chain:
+    - "/usr/bin/oko-extern-chain-simple-noloop --thinking-budget 256000"
