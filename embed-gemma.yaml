@@ -1,0 +1,6 @@
+embeddinggemma:
+  cmd: >-
+    llama-server
+    -m models-embed/ggml-org___embeddinggemma-300m-qat-q8_0-GGUF/embeddinggemma-300m-qat-Q8_0.gguf
+    --embedding
+    -c 4096 -b 4096 -ub 4096
