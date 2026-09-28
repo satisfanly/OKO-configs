@@ -1,7 +1,9 @@
 qwen38-DavidAU:
   prio: 50
+  alias:
+    - sf_organic
   cmd: >-
-    llama-server
+    llama-server --log-verbosity 4 --no-log-prefix --no-log-timestamps
     -m models/DavidAU___Qwen3.8-27B-TWIN-TURBO-Fable-Cold-Fusion-709-L-Uncensored-NM-DAU-NEO-MTP-GGUF/Qwen3.8-27B-TTURBO-Fable-C-Fusion-709-L-Uncen-TOOLS-NM-DAU-NEO-MAX-MTP-Q8_0.gguf
     -mm models/DavidAU___Qwen3.8-27B-TWIN-TURBO-Fable-Cold-Fusion-709-L-Uncensored-NM-DAU-NEO-MTP-GGUF/mmproj-F32.gguf
     --spec-type draft-mtp --spec-draft-n-max 4
@@ -18,9 +20,10 @@ qwen38-DavidAU:
   temperature (ro): 0.2
   dry-multiplier (ro): 0.0
   reasoning-effort (force): medium
-  reasoning-preserve (force): on
+  reasoning-preserve (force): off
   reasoning-budget (ro): 24000
   sysf: null
   think: on
   external-chain:
+    - "/usr/bin/oko-extern-chain-crossctx-noloop --max-repeats 10"
     - "/usr/bin/oko-extern-chain-simple-noloop --thinking-budget 256000"
