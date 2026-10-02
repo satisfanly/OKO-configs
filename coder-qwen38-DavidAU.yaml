@@ -1,13 +1,12 @@
 qwen38-DavidAU:
   prio: 50
-  alias:
-    - sf_organic
   cmd: >-
     llama-server --log-verbosity 4 --no-log-prefix --no-log-timestamps
     -m models/DavidAU___Qwen3.8-27B-TWIN-TURBO-Fable-Cold-Fusion-709-L-Uncensored-NM-DAU-NEO-MTP-GGUF/Qwen3.8-27B-TTURBO-Fable-C-Fusion-709-L-Uncen-TOOLS-NM-DAU-NEO-MAX-MTP-Q8_0.gguf
     -mm models/DavidAU___Qwen3.8-27B-TWIN-TURBO-Fable-Cold-Fusion-709-L-Uncensored-NM-DAU-NEO-MTP-GGUF/mmproj-F32.gguf
     --spec-type draft-mtp --spec-draft-n-max 4
     -fit off -fa on -np 1 -b 256 -ub 256
+    --slot-prompt-similarity 0.9 --cache-ram %max_free_ram% --swa-checkpoints 2 --checkpoint-min-step 2048
     --no-context-shift --no-prefill-assistant
     -c 262144 -ngl 999
     --thinking-eos-modifier 1e6
